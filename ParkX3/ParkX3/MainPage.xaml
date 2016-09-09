@@ -2,10 +2,29 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ParkX3"
-             x:Class="ParkX3.MainPage">
+             x:Class="ParkX3.MainPage"
+             Title="Park">
 
-  <Label Text="Park - autoDB"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
+  <StackLayout>
+    <Slider VerticalOptions="CenterAndExpand" />
+
+    <Label Text="A simple Label"
+           Font="Large"
+           HorizontalOptions="Center"
+           VerticalOptions="Start"
+           />
+    
+    <Label Text="Park - autoDB"
+             VerticalOptions="Start"
+             HorizontalTextAlignment="Center"
+             IsVisible="true"
+             FontSize="Large"
+             FontAttributes="Bold"/>
+
+    <Button Text="Click Me!"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" />
+  </StackLayout>
+
 
 </ContentPage>
