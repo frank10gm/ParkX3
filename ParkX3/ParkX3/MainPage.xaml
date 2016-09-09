@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:ParkX3"
              x:Class="ParkX3.MainPage">
 
-  <Label Text="Welcome to Xamarin Forms!"
+  <Label Text="Welcome to ParkX3!"
            VerticalOptions="Center"
            HorizontalOptions="Center" />
 
