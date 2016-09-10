@@ -13,5 +13,11 @@ namespace ParkX3
         {
             InitializeComponent();
         }
+
+        void onSliderValueChanged(object sender, ValueChangedEventArgs args)
+        {
+            valueLabel.Text = args.NewValue.ToString();
+            
+        }
     }
 }

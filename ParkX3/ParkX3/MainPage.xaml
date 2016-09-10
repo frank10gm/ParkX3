@@ -6,9 +6,11 @@
              Title="Park">
 
   <StackLayout>
-    <Slider VerticalOptions="CenterAndExpand" />
+    <Slider VerticalOptions="CenterAndExpand"
+            ValueChanged="onSliderValueChanged"/>
 
     <Label Text="A simple Label"
+           x:Name="valueLabel"
            Font="Large"
            HorizontalOptions="Center"
            VerticalOptions="Start"
