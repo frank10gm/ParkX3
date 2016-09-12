@@ -13,7 +13,7 @@ namespace ParkX3
         {
             InitializeComponent();
 
-            MainPage = new ParkX3.MainPage();
+            MainPage = new NavigationPage (new ParkX3.MainPage());
         }
 
         protected override void OnStart()
