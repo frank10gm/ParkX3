@@ -19,5 +19,15 @@ namespace ParkX3
             valueLabel.Text = args.NewValue.ToString();
             
         }
+
+        async void OnButtonClicked(object sender, EventArgs args)
+        {
+            Button button = (Button)sender;
+            /*await DisplayAlert("Clicked",
+                "The button labeled '" + valueLabel.Text + "' has been clicked.",
+                "OK");*/
+
+
+        }
     }
 }

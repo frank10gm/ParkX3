@@ -7,13 +7,18 @@
 
   <StackLayout>
     <Slider VerticalOptions="CenterAndExpand"
-            ValueChanged="onSliderValueChanged"/>
+            ValueChanged="onSliderValueChanged"
+            Maximum="360"
+            x:Name="slider"/>
 
-    <Label Text="A simple Label"
-           x:Name="valueLabel"
-           Font="Large"
+    <Label Font="Large"
            HorizontalOptions="Center"
            VerticalOptions="Start"
+           BindingContext="{x:Reference Name=slider}"
+           Rotation="{Binding Path=Value}"
+           Text="{Binding Value,
+                          StringFormat='The angle is {0:F0} degrees'}"
+           x:Name="valueLabel"
            />
     
     <Label Text="Park - autoDB"
@@ -21,11 +26,13 @@
              HorizontalTextAlignment="Center"
              IsVisible="true"
              FontSize="Large"
-             FontAttributes="Bold"/>
+             FontAttributes="Bold"
+             />
 
-    <Button Text="Click Me!"
+    <Button Text="Start"
             HorizontalOptions="Center"
-            VerticalOptions="CenterAndExpand" />
+            VerticalOptions="CenterAndExpand"
+            Clicked="OnButtonClicked"/>
   </StackLayout>
 
 
