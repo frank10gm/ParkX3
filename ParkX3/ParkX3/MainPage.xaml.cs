@@ -22,12 +22,13 @@ namespace ParkX3
 
         async void OnButtonClicked(object sender, EventArgs args)
         {
-            Button button = (Button)sender;
+            //Button button = (Button)sender;
             /*await DisplayAlert("Clicked",
                 "The button labeled '" + valueLabel.Text + "' has been clicked.",
                 "OK");*/
 
-            await Navigation.PushAsync(new About("tua mamma"));
+            //Navigation.PushAsync(new About("tua mamma"));
+			await Navigation.PushAsync(new MarchePage());
         }
     }
 }
