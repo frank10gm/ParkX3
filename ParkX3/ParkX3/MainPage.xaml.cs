@@ -27,7 +27,7 @@ namespace ParkX3
                 "The button labeled '" + valueLabel.Text + "' has been clicked.",
                 "OK");*/
 
-            await Navigation.PushAsync(new About());
+            await Navigation.PushAsync(new About("tua mamma"));
         }
     }
 }

@@ -10,8 +10,9 @@ namespace ParkX3
 {
     public partial class About : ContentPage
     {
-        public About()
+        public About(string data)
         {
+			
             InitializeComponent();
         }
     }
