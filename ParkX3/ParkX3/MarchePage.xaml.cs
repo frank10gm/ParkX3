@@ -43,7 +43,7 @@ namespace ParkX3
 				"?action=getMarche";
 			var jsonParsed = await FetchMarcheAsync(url);
 
-			Debug.WriteLine(jsonParsed);
+			Debug.WriteLine(jsonParsed[1].marca);
 
 
 			/*await DisplayAlert("Clicked",
@@ -52,7 +52,18 @@ namespace ParkX3
 
 		}
 
-		private async Task<Object> FetchMarcheAsync(string url)
+		public class Person
+		{
+			public string marca;
+			public string logo;
+			public string descrizione;
+		}
+		public class Record
+		{
+			public Person record;
+		}
+
+		private async Task<List<Person>> FetchMarcheAsync(string url)
 		{
 			// Create an HTTP web request using the URL:
 			HttpWebRequest request = (HttpWebRequest)WebRequest.Create(new Uri(url));
@@ -72,8 +83,9 @@ namespace ParkX3
 						string content = reader.ReadToEnd();
 						//Debug.WriteLine(content);
 
-						List<Object> result = await Task.Run(() => JsonConvert.DeserializeObject<List<Object>>(content));
+						var result = await Task.Run(() => JsonConvert.DeserializeObject<List<Person>>(content));
 						// Return the JSON document:
+
 						return result;
 					
 					}
