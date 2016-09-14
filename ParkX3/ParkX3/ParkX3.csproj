@@ -53,6 +53,11 @@
     </Compile>
     <Compile Include="MarcheClass.cs" />
     <Compile Include="ItemClass.cs" />
+    <Compile Include="CarsPage.xaml.cs">
+      <DependentUpon>CarsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Marca.cs" />
+    <Compile Include="Car.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -67,6 +72,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="MarchePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -1,30 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-using Newtonsoft.Json;
-using System.Net;
 using System.IO;
+using System.Net;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Xamarin.Forms;
 using System.Diagnostics;
-using Xamarin.Forms.Xaml;
-
 
 namespace ParkX3
 {
-	public partial class MarchePage : ContentPage
+	public partial class CarsPage : ContentPage
 	{
 
-		public MarchePage()
+		public Marca marca;
+
+		public CarsPage(Marca select)
 		{
 			InitializeComponent();
-			NavigationPage.SetTitleIcon(this, "top.png");
+			this.Title = select.marca;
+			marca = select;
 		}
 
 		protected async override void OnAppearing()
 		{
 			base.OnAppearing();
-			await LoadMarche();
+			await LoadCars();
 		}
 
 		async void OnSelection(object sender, SelectedItemChangedEventArgs e)
@@ -35,21 +36,22 @@ namespace ParkX3
 			}
 
 			((ListView)sender).SelectedItem = null;
-			var select = (Marca)e.SelectedItem;
+			var select = (Car)e.SelectedItem;
 
-			await Navigation.PushAsync(new CarsPage(select));
+			//await Navigation.PushAsync(new CarPage(select));
 		}
 
-		public async Task LoadMarche()
+		public async Task LoadCars()
 		{
 			string url = "http://www.stritwalk.com/Park/api/" +
-				"?action=getMarche";
-			var jsonParsed = await FetchMarcheAsync(url);
-			MarcheView.ItemsSource = jsonParsed;
+				"?action=getCars&marca="
+				+ marca.marca;
+			var jsonParsed = await FetchCarsAsync(url);
+			CarsView.ItemsSource = jsonParsed;
+			Debug.WriteLine(jsonParsed);
 		}
 
-
-		private async Task<ObservableCollection<Marca>> FetchMarcheAsync(string url)
+		private async Task<ObservableCollection<Car>> FetchCarsAsync(string url)
 		{
 			// Create an HTTP web request using the URL:
 			HttpWebRequest request = (HttpWebRequest)WebRequest.Create(new Uri(url));
@@ -67,13 +69,13 @@ namespace ParkX3
 					{
 
 						string content = reader.ReadToEnd();
-						//Debug.WriteLine(content);
+						Debug.WriteLine(content);
 
-						var result = await Task.Run(() => JsonConvert.DeserializeObject<ObservableCollection<Marca>>(content));
+						var result = await Task.Run(() => JsonConvert.DeserializeObject<ObservableCollection<Car>>(content));
 						// Return the JSON document:
 
 						return result;
-					
+
 					}
 				}
 			}

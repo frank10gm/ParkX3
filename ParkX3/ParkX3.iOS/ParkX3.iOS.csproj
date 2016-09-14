@@ -96,7 +96,6 @@
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
     <None Include="packages.config" />
-    <None Include="Resources\logo_alto3.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -115,6 +114,12 @@
     <BundleResource Include="Resources\Icon-Small%402x.png" />
     <BundleResource Include="Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="Resources\icon-pork.png" />
+    <BundleResource Include="Resources\icon-maial.png" />
+    <BundleResource Include="Resources\top.png" />
+    <BundleResource Include="Resources\top%402x.png" />
+    <BundleResource Include="Resources\top%403x.png" />
+    <BundleResource Include="Resources\top%404x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
