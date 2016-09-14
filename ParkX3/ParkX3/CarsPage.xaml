@@ -5,7 +5,7 @@
 		<ListView x:Name="CarsView" ItemSelected="OnSelection">
     <ListView.ItemTemplate>
       <DataTemplate>
-        <TextCell Text="{Binding model}"
+        <TextCell Text="{Binding modello}"
 					/>
       </DataTemplate>
     </ListView.ItemTemplate>

@@ -4,7 +4,7 @@ namespace ParkX3
 	public class Marca
 	{
 		public string marca { get; set; }
-		public string logo;
-		public string descrizione;
+		public string logo { get; set; }
+		public string descrizione { get; set; }
 	}
 }

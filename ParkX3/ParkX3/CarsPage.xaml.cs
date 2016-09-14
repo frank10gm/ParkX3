@@ -48,7 +48,6 @@ namespace ParkX3
 				+ marca.marca;
 			var jsonParsed = await FetchCarsAsync(url);
 			CarsView.ItemsSource = jsonParsed;
-			Debug.WriteLine(jsonParsed);
 		}
 
 		private async Task<ObservableCollection<Car>> FetchCarsAsync(string url)
