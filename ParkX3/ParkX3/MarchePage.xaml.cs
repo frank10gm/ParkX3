@@ -17,7 +17,7 @@ namespace ParkX3
 		public MarchePage()
 		{
 			InitializeComponent();
-			NavigationPage.SetTitleIcon(this, "icon-76.png");
+			NavigationPage.SetTitleIcon(this, "top.png");
 			//this.Title = "Park";
 		}
 
