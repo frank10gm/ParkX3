@@ -14,27 +14,27 @@ namespace ParkX3
 	public partial class MarchePage : ContentPage
 	{
 
-		ObservableCollection<MarcheClass> marche = new ObservableCollection<MarcheClass>();
-
 		public MarchePage()
 		{
 			InitializeComponent();
-
-			MarcheView.ItemsSource = marche;
-
-			Debug.WriteLine("start page");
-
-
-			//marche.Add(new MarcheClass { DisplayName = "Bugatti" });
-			//marche.Add(new MarcheClass { DisplayName = "Audi" });
+			NavigationPage.SetTitleIcon(this, "icon-76.png");
+			//this.Title = "Park";
 		}
-
 
 		protected async override void OnAppearing()
 		{
 			base.OnAppearing();
-			System.Diagnostics.Debug.WriteLine("*****Here*****");
 			await LoadMarche();
+		}
+
+		void OnSelection(object sender, SelectedItemChangedEventArgs e)
+		{
+			if (e.SelectedItem == null)
+			{
+				return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
+			}
+			DisplayAlert("Item Selected", e.SelectedItem.ToString(), "Ok");
+			//((ListView)sender).SelectedItem = null; //uncomment line if you want to disable the visual selection state.
 		}
 
 		public async Task LoadMarche()
@@ -42,28 +42,17 @@ namespace ParkX3
 			string url = "http://www.stritwalk.com/Park/api/" +
 				"?action=getMarche";
 			var jsonParsed = await FetchMarcheAsync(url);
-
-			Debug.WriteLine(jsonParsed[1].marca);
-
-
-			/*await DisplayAlert("Clicked",
-				"The button labeled '" + json + "' has been clicked.",
-				"OK");*/
-
+			MarcheView.ItemsSource = jsonParsed;
 		}
 
-		public class Person
+		public class Marca
 		{
-			public string marca;
+			public string marca { get; set; }
 			public string logo;
 			public string descrizione;
 		}
-		public class Record
-		{
-			public Person record;
-		}
 
-		private async Task<List<Person>> FetchMarcheAsync(string url)
+		private async Task<ObservableCollection<Marca>> FetchMarcheAsync(string url)
 		{
 			// Create an HTTP web request using the URL:
 			HttpWebRequest request = (HttpWebRequest)WebRequest.Create(new Uri(url));
@@ -83,7 +72,7 @@ namespace ParkX3
 						string content = reader.ReadToEnd();
 						//Debug.WriteLine(content);
 
-						var result = await Task.Run(() => JsonConvert.DeserializeObject<List<Person>>(content));
+						var result = await Task.Run(() => JsonConvert.DeserializeObject<ObservableCollection<Marca>>(content));
 						// Return the JSON document:
 
 						return result;

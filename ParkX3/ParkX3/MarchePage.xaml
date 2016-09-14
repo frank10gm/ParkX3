@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ParkX3.MarchePage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="ParkX3.MarchePage"
+		>
 	<ContentPage.Content>
 
-	<ListView x:Name="MarcheView">
+	<ListView x:Name="MarcheView" ItemSelected="OnSelection">
     <ListView.ItemTemplate>
       <DataTemplate>
-        <TextCell Text="{Binding DisplayName}" />
+        <TextCell Text="{Binding marca}"
+					/>
       </DataTemplate>
     </ListView.ItemTemplate>
   </ListView>
