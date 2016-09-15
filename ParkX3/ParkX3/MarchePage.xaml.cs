@@ -8,12 +8,14 @@ using System.Net;
 using System.IO;
 using System.Diagnostics;
 using Xamarin.Forms.Xaml;
+using System.Linq;
 
 
 namespace ParkX3
 {
 	public partial class MarchePage : ContentPage
 	{
+		public ObservableCollection<Marca> jsonParsed;
 
 		public MarchePage()
 		{
@@ -27,6 +29,14 @@ namespace ParkX3
 			await LoadMarche();
 		}
 
+		void onSearch(object sender, TextChangedEventArgs e)
+		{
+			if (string.IsNullOrWhiteSpace(e.NewTextValue))
+				MarcheView.ItemsSource = jsonParsed;
+			else
+				MarcheView.ItemsSource = jsonParsed.Where(i => i.marca.ToLower().Contains(e.NewTextValue.ToLower()));
+		}
+
 		async void OnSelection(object sender, SelectedItemChangedEventArgs e)
 		{
 			if (e.SelectedItem == null)
@@ -38,15 +48,23 @@ namespace ParkX3
 			var select = (Marca)e.SelectedItem;
 
 			await Navigation.PushAsync(new CarsPage(select));
+			searchBar.Text = "";
 		}
 
 		public async Task LoadMarche()
 		{
+			if (jsonParsed == null)
+			{
+				loading.IsVisible = true;
+				loading.IsRunning = true;
+			}
+
 			string url = "http://www.stritwalk.com/Park/api/" +
 				"?action=getMarche";
-			var jsonParsed = await FetchMarcheAsync(url);
+			jsonParsed = await FetchMarcheAsync(url);
 			MarcheView.ItemsSource = jsonParsed;
 		}
+
 
 
 		private async Task<ObservableCollection<Marca>> FetchMarcheAsync(string url)
@@ -71,9 +89,11 @@ namespace ParkX3
 
 						var result = await Task.Run(() => JsonConvert.DeserializeObject<ObservableCollection<Marca>>(content));
 						// Return the JSON document:
+						loading.IsVisible = false;
+						loading.IsRunning = false;
 
 						return result;
-					
+
 					}
 				}
 			}

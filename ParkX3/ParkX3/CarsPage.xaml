@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ParkX3.CarsPage">
 	<ContentPage.Content>
+	<StackLayout>
 
-		<ListView x:Name="CarsView" ItemSelected="OnSelection">
+		<SearchBar Placeholder="Search" 
+			TextChanged="onSearch"
+					x:Name="searchBar">
+		</SearchBar>
+
+	<ActivityIndicator
+					Margin="0,5,0,5"
+					Color="Gray" IsRunning="false" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+				x:Name="loading"/>
+		<ListView 
+				x:Name="CarsView" 
+				ItemSelected="OnSelection" 
+				IsGroupingEnabled="true" 
+				GroupDisplayBinding="{Binding Nome}" >
     <ListView.ItemTemplate>
       <DataTemplate>
         <TextCell Text="{Binding modello}"
-					/>
+						/>
       </DataTemplate>
     </ListView.ItemTemplate>
   </ListView>
-		
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

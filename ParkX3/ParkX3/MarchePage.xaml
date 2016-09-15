@@ -4,6 +4,17 @@
 		x:Class="ParkX3.MarchePage"
 		>
 	<ContentPage.Content>
+		<StackLayout>
+
+		<SearchBar Placeholder="Search" 
+			TextChanged="onSearch"
+					x:Name="searchBar">
+		</SearchBar>
+
+	<ActivityIndicator
+					Margin="0,5,0,5"
+					Color="Gray" IsRunning="false" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+				x:Name="loading"/>
 
 	<ListView x:Name="MarcheView" ItemSelected="OnSelection">
     <ListView.ItemTemplate>
@@ -13,6 +24,8 @@
       </DataTemplate>
     </ListView.ItemTemplate>
   </ListView>
+
 		
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
