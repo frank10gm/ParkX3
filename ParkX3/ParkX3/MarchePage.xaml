@@ -5,10 +5,10 @@
 			<SearchBar Placeholder="Search" TextChanged="onSearch" x:Name="searchBar" Margin="0,0,0,-6">
 			</SearchBar>
 			<ActivityIndicator Margin="0,11,0,5" Color="Gray" IsRunning="false" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" x:Name="loading" />
-			<ListView x:Name="MarcheView" ItemSelected="OnSelection" SeparatorColor="Gray">
+			<ListView x:Name="MarcheView" ItemSelected="OnSelection" SeparatorColor="Gray" >
 				<ListView.ItemTemplate>
 					<DataTemplate>
-						<TextCell Text="{Binding marca}" />
+						<TextCell Text="{Binding marca}" TextColor="Black" DetailColor="Black"/>
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>

@@ -8,7 +8,7 @@
 			<ListView x:Name="CarsView" ItemSelected="OnSelection" IsGroupingEnabled="true" GroupDisplayBinding="{Binding Nome}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 				<ListView.ItemTemplate>
 					<DataTemplate>
-						<TextCell Text="{Binding modello}" />
+						<TextCell Text="{Binding modello}" TextColor="Black" />
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
