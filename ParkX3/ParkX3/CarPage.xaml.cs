@@ -7,9 +7,12 @@ namespace ParkX3
 {
 	public partial class CarPage : ContentPage
 	{
-		public CarPage()
+		public CarPage(Car select, string marca)
 		{
 			InitializeComponent();
+			this.Title = select.modello;
+			modello.Text = marca + " " + select.modello + Environment.NewLine;
+			breveDesc.Text = select.breveDesc;
 		}
 	}
 }

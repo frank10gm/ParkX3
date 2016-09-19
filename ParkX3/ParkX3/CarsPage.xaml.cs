@@ -56,7 +56,7 @@ namespace ParkX3
 			((ListView)sender).SelectedItem = null;
 			var select = (Car)e.SelectedItem;
 
-			await Navigation.PushAsync(new CarPage());
+			await Navigation.PushAsync(new CarPage(select, marca.marca));
 		}
 
 		public async Task LoadCars()
