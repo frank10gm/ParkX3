@@ -20,6 +20,7 @@
     <ListView.ItemTemplate>
       <DataTemplate>
         <TextCell Text="{Binding modello}"
+                  TextColor="Black"
 						/>
       </DataTemplate>
     </ListView.ItemTemplate>

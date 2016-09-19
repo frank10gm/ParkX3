@@ -20,7 +20,8 @@ namespace ParkX3
 		public MarchePage()
 		{
 			InitializeComponent();
-			NavigationPage.SetTitleIcon(this, "top.png");
+            this.Title = "Park";
+            NavigationPage.SetTitleIcon(this, "top.png");          
 		}
 
 		protected async override void OnAppearing()
