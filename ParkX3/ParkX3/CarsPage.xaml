@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ParkX3.CarsPage">
-	<ContentPage.Content>
-		<StackLayout>
-			<SearchBar Placeholder="Search" TextChanged="onSearch" x:Name="searchBar" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0,0,0,-6">
-			</SearchBar>
-			<ActivityIndicator Margin="0,11,0,5" Color="Gray" IsRunning="false" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" x:Name="loading" />
-			<ListView x:Name="CarsView" SeparatorColor="Gray" ItemSelected="OnSelection" IsGroupingEnabled="true" GroupDisplayBinding="{Binding Nome}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-				<ListView.ItemTemplate>
-					<DataTemplate>
-						<TextCell Text="{Binding modello}" TextColor="Black" />
-					</DataTemplate>
-				</ListView.ItemTemplate>
-			</ListView>
-			<Grid>
-				<Button Text="Add" HorizontalOptions="Center" Margin="0,0,0,6">
-				</Button>
-			</Grid>
-		</StackLayout>
-	</ContentPage.Content>
+  <ContentPage.Content>
+    <StackLayout>
+      <SearchBar Placeholder="Search" TextChanged="onSearch" x:Name="searchBar" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0,0,0,-6">
+      </SearchBar>
+      <ActivityIndicator Margin="0,11,0,5" Color="Gray" IsRunning="false" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" x:Name="loading" />
+      <ListView x:Name="CarsView" SeparatorColor="Gray" ItemSelected="OnSelection" IsGroupingEnabled="true" GroupDisplayBinding="{Binding Nome}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <TextCell Text="{Binding modello}" Detail="{Binding Path=detail, 
+                 StringFormat='{0}'}" TextColor="Black"/>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+      <Grid>
+        <Button Text="Add" HorizontalOptions="Center" Margin="0,0,0,6">
+        </Button>
+      </Grid>
+    </StackLayout>
+  </ContentPage.Content>
 </ContentPage>

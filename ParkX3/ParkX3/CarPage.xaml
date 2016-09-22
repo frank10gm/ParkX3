@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ParkX3.CarPage">
-	<ContentPage.Content>
-		<ScrollView>
-			<StackLayout>
-				<Frame HasShadow="true" Margin="20">
-					<Label FontFamily="LobsterTwo">
-						<Label.FormattedText>
-							<FormattedString>
-								<Span x:Name="modello" Text="Marca Modello&#xA;" FontSize="16" ForegroundColor="Black" FontAttributes="Bold">
-								</Span>
-								<Span Text="&#xA;" FontSize="6">
-								</Span>
-								<Span x:Name="breveDesc" Text="Breve descrizione" FontSize="14" FontFamily="Quantico" ForegroundColor="Black">
-								</Span>
-							</FormattedString>
-						</Label.FormattedText>
-					</Label>
-				</Frame>
-			</StackLayout>
-		</ScrollView>
-	</ContentPage.Content>
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout x:Name="lay">
+        <Frame HasShadow="true" Margin="20">
+          <Label FontFamily="LobsterTwo">
+            <Label.FormattedText>
+              <FormattedString>
+                <Span x:Name="modello" Text="Marca Modello&#xA;" FontSize="16" ForegroundColor="Black">
+                </Span>
+                <Span Text="&#xA;" FontSize="6">
+                </Span>
+                <Span x:Name="breveDesc" Text="Breve descrizione" FontSize="14" FontFamily="Quantico" ForegroundColor="Black">
+                </Span>
+              </FormattedString>
+            </Label.FormattedText>
+          </Label>
+        </Frame>
+
+
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
 </ContentPage>

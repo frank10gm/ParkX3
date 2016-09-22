@@ -57,7 +57,8 @@ namespace ParkX3
 			var select = (Car)e.SelectedItem;
 
 			await Navigation.PushAsync(new CarPage(select, marca.marca));
-		}
+            searchBar.Text = "";
+        }
 
 		public async Task LoadCars()
 		{
