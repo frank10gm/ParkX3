@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ParkX3.MarchePage">
-	<ContentPage.Content>
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Add" Clicked="addCar"></ToolbarItem>
+  </ContentPage.ToolbarItems>
+  <ContentPage.Content>
 		<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-			<SearchBar Placeholder="Search" TextChanged="onSearch" x:Name="searchBar" Margin="0,0,0,-6">
+			<SearchBar Placeholder="Search" TextChanged="onSearch" x:Name="searchBar" Margin="0,0,0,0">
 			</SearchBar>
 			<ActivityIndicator Margin="0,11,0,5" Color="Gray" IsRunning="false" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" x:Name="loading" />
 			<ListView x:Name="MarcheView" ItemSelected="OnSelection" SeparatorColor="Gray" >
@@ -12,10 +15,7 @@
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
-			<Grid>
-				<Button Text="Add" HorizontalOptions="Center" Margin="0,0,0,6" Clicked="addCar">
-				</Button>
-			</Grid>
+		
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

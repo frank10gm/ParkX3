@@ -12,7 +12,8 @@ namespace ParkX3
             InitializeComponent();
             this.Title = select.modello;
             modello.Text = marca + " " + select.modello + Environment.NewLine;
-            breveDesc.Text = "Year: " + select.serieNuova;
+            if (select.breveDesc != "")
+                breveDesc.Text = "Year: " + select.serieNuova;
 
             FormattedString fs = new FormattedString();
             fs.Spans.Add(new Span
@@ -208,7 +209,7 @@ namespace ParkX3
                 HorizontalOptions = LayoutOptions.Center,
                 Margin = new Thickness(0, 0, 0, 6)
             };
-            lay.Children.Add(edit);
+            //lay.Children.Add(edit);
         }
 
     }

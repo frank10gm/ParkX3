@@ -100,8 +100,9 @@ namespace ParkX3
 
         async void addCar(object sender, EventArgs e)
         {
-            AddCar add = new AddCar();
-            await Navigation.PushModalAsync(add);
+            AddCar add = new AddCar("", "");
+            await Navigation.PushAsync(add);
+
         }
 
     }

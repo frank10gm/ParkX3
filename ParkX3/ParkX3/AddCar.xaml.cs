@@ -10,7 +10,7 @@ namespace ParkX3
 {
     public partial class AddCar : ContentPage
     {
-        public AddCar()
+        public AddCar(string marca, string modello)
         {
             InitializeComponent();
         }
