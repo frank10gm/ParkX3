@@ -3,15 +3,15 @@
   <ContentPage.Content>
     <ScrollView>
       <StackLayout x:Name="lay">
-        <Frame HasShadow="true" Margin="20">
-          <Label FontFamily="LobsterTwo">
+        <Frame HasShadow="true" Margin="20,12,20,3">
+          <Label>
             <Label.FormattedText>
               <FormattedString>
-                <Span x:Name="modello" Text="Marca Modello&#xA;" FontSize="16" ForegroundColor="Black">
+                <Span x:Name="modello" FontSize="16">
                 </Span>
                 <Span Text="&#xA;" FontSize="6">
                 </Span>
-                <Span x:Name="breveDesc" Text="Breve descrizione" FontSize="14" FontFamily="Quantico" ForegroundColor="Black">
+                <Span x:Name="breveDesc" FontSize="14">
                 </Span>
               </FormattedString>
             </Label.FormattedText>

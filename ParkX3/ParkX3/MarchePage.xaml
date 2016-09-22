@@ -13,7 +13,7 @@
 				</ListView.ItemTemplate>
 			</ListView>
 			<Grid>
-				<Button Text="Add" HorizontalOptions="Center" Margin="0,0,0,6">
+				<Button Text="Add" HorizontalOptions="Center" Margin="0,0,0,6" Clicked="addCar">
 				</Button>
 			</Grid>
 		</StackLayout>

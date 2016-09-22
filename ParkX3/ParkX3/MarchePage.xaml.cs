@@ -66,8 +66,6 @@ namespace ParkX3
 			MarcheView.ItemsSource = jsonParsed;
 		}
 
-
-
 		private async Task<ObservableCollection<Marca>> FetchMarcheAsync(string url)
 		{
 			// Create an HTTP web request using the URL:
@@ -100,5 +98,11 @@ namespace ParkX3
 			}
 		}
 
-	}
+        async void addCar(object sender, EventArgs e)
+        {
+            AddCar add = new AddCar();
+            await Navigation.PushModalAsync(add);
+        }
+
+    }
 }
