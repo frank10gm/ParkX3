@@ -239,7 +239,7 @@ namespace ParkX3
                 {
                     Content = new Image
                     {
-                        Aspect = Aspect.AspectFit,
+                        Aspect = Aspect.AspectFill,
                         Source = new UriImageSource
                         {
                             Uri = new Uri(select.immagine),
