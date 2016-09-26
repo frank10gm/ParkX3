@@ -7,10 +7,15 @@ namespace ParkX3
 {
     public partial class CarPage : ContentPage
     {
+        public string marca_g;
+        public string modello_g;
+
         public CarPage(Car select, string marca)
         {
             InitializeComponent();
             this.Title = select.modello;
+            marca_g = marca;
+            modello_g = select.modello;
             modello.Text = marca + " " + select.modello + Environment.NewLine;
             if (select.breveDesc != "")
                 breveDesc.Text = "Year: " + select.serieNuova;
@@ -210,6 +215,12 @@ namespace ParkX3
                 Margin = new Thickness(0, 0, 0, 6)
             };
             //lay.Children.Add(edit);
+        }
+
+        async void editCar(object sender, EventArgs e)
+        {
+            EditCar edit = new EditCar(marca_g, modello_g);
+            await Navigation.PushAsync(edit);
         }
 
     }

@@ -13,6 +13,11 @@ namespace ParkX3
         public AddCar(string marca, string modello)
         {
             InitializeComponent();
+            brand.Text = marca;
+            if(marca != "")
+            {
+                brand.IsEnabled = false;
+            }
         }
     }
 }

@@ -2,10 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ParkX3.EditCar"
-             Title="Add car">
+             Title="Edit car">
   <ContentPage.ToolbarItems>
-    <ToolbarItem Text="Cancel" ></ToolbarItem>
-    <ToolbarItem Text="Save" ></ToolbarItem>
+
   </ContentPage.ToolbarItems>
   <ContentPage.Content>
 
@@ -13,27 +12,29 @@
       <StackLayout x:Name="lay" VerticalOptions="StartAndExpand" Padding="20,20,20,20">
 
         <Label Text="Brand"></Label>
-        <Entry Placeholder="Brand" />
+        <Entry Placeholder="" x:Name="brand" />
         <Label Text="Model name"></Label>
-        <Entry Placeholder="Model name" />
+        <Entry Placeholder="" x:Name="model"/>
         <Label Text="Status"></Label>
-        <Entry Placeholder="Status" />
+        <Entry Placeholder="" x:Name="status"/>
         <Label Text="Year"></Label>
-        <Entry Placeholder="Year" />
+        <Entry Placeholder="" x:Name="year"/>
         <Label Text="Image link"></Label>
-        <Entry Placeholder="Image link" />
+        <Entry Placeholder="" x:Name="image"/>
         <Label Text="Dimensions"></Label>
-        <Entry Placeholder="Dimensions" />
+        <Entry Placeholder="" x:Name="dimensions"/>
         <Label Text="Engines"></Label>
-        <Entry Placeholder="Engines" />
+        <Entry Placeholder="" x:Name="engines"/>
         <Label Text="Types"></Label>
-        <Entry Placeholder="Types" />
+        <Entry Placeholder="" x:Name="types"/>
         <Label Text="Price"></Label>
-        <Entry Placeholder="Price" />
+        <Entry Placeholder="" x:Name="price"/>
         <Label Text="Description"></Label>
-        <Entry Placeholder="Description" />
+        <Entry Placeholder="" x:Name="description"/>
+        
         <Button Text="Save"  />
         <Button Text="Cancel" />
+        <Button Text="DELETE CAR" TextColor="Red"/>
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>

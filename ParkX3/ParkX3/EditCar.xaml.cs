@@ -10,9 +10,19 @@ namespace ParkX3
 {
     public partial class EditCar : ContentPage
     {
-        public EditCar()
+        public EditCar(string marca, string modello)
         {
             InitializeComponent();
+            brand.Text = marca;
+            model.Text = modello;
+            if (marca != "")
+            {
+                brand.IsEnabled = false;
+            }
+            if(modello != "")
+            {
+                model.IsEnabled = false;   
+            }
         }
     }
 }

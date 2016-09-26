@@ -132,5 +132,10 @@ namespace ParkX3
 			}
 		}
 
-	}
+        async void addCar(object sender, EventArgs e)
+        {            
+            AddCar add = new AddCar(marca.marca, "");
+            await Navigation.PushAsync(add);
+        }
+    }
 }

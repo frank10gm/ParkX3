@@ -102,7 +102,6 @@ namespace ParkX3
         {
             AddCar add = new AddCar("", "");
             await Navigation.PushAsync(add);
-
         }
 
     }
