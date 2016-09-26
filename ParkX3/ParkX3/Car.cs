@@ -3,8 +3,9 @@ using System.Collections.ObjectModel;
 
 namespace ParkX3
 {
-    public class Car
+    public class Car : EventArgs
     {
+      
         public string action { get; set; }
         public string marca { get; set; }
         public string modello { get; set; }
@@ -31,8 +32,11 @@ namespace ParkX3
             }
         }
 
-        public Car()
+        public object[] Args { get; set; }
+
+        public Car(params object[] args)
         {
+            Args = args;
         }
     }
 

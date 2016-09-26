@@ -18,7 +18,7 @@
         <Label Text="Status (default = 0)"></Label>
         <Entry Keyboard="Numeric" Placeholder="0 = for sale, 1 = heritage, 2 = prototype" x:Name="status" />
         <Label Text="Year"></Label>
-        <Entry Placeholder="" x:Name="year"/>
+        <Entry Keyboard="Numeric" Placeholder="" x:Name="year"/>
         <Label Text="Image link"></Label>
         <Entry Placeholder="" x:Name="image"/>
         <Label Text="Dimensions"></Label>

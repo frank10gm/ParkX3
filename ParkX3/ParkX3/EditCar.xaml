@@ -18,7 +18,7 @@
         <Label Text="Status"></Label>
         <Entry Placeholder="" x:Name="status"/>
         <Label Text="Year"></Label>
-        <Entry Placeholder="" x:Name="year"/>
+        <Entry Keyboard="Numeric" Placeholder="" x:Name="year"/>
         <Label Text="Image link"></Label>
         <Entry Placeholder="" x:Name="image"/>
         <Label Text="Dimensions"></Label>

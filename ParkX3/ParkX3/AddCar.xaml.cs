@@ -72,63 +72,33 @@ namespace ParkX3
                 {
                     try
                     {
-                        url = "http://www.stritwalk.com/Park/api/" +
-                "?action=uploadCar" +
-                "&marca=" + brand.Text +
-                "&modello=" + model.Text +
-                "&vecchio=" + status.Text +
-                "&motori=" + engines.Text +
-                "&serieNuova=" + year.Text +
-                "&serieVecchia=" + "" +
-                "&immagine=" + image.Text +
-                "&dimensioni=" + dimensions.Text +
-                "&modelli=" + types.Text +
-                "&prezzo=" + price.Text +
-                "&descrizione=" + description.Text
-                ;
-                        Car it = new Car();
-                        it.marca = brand.Text;
-                        it.modello = model.Text;
-                        it.vecchio = status.Text;
-                        it.action = "uploadCar";
-                        url = "http://www.stritwalk.com/Park/api/";
-                        var item = @"{""action"" : ""uploadCar"", ""marca"" : " + brand.Text + ", \"modello\" : " + model.Text + ", \"vecchi\" : " + status.Text + "}";
-                        var json = JsonConvert.SerializeObject(it);
-                        await DisplayAlert("Alert", json, "OK");
-                        var content = new StringContent(json, Encoding.UTF8, "application/json");
-                        HttpResponseMessage response = null;
-                        client = new HttpClient();
-                        client.MaxResponseContentBufferSize = 256000;
-                        var uri = new Uri("http://www.stritwalk.com/Park/api/");
-                        response = await client.PostAsync(uri, content);
-                        if (response.IsSuccessStatusCode)
-                        {                           
-                            await Navigation.PopAsync();
-
-                        }else
+                        using (var client = new HttpClient())
                         {
-                            await DisplayAlert("Alert", response.ToString(), "OK");
-                        }
-                        /*
-                        // Create an HTTP web request using the URL:
-                        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(new Uri(url));
-                        request.ContentType = "application/x-www-form-urlencoded";
-                        request.Method = "POST";
-
-                        // Send the request to the server and wait for the response:
-                        using (WebResponse response = await request.GetResponseAsync())
-                        {
-                            // Get a stream representation of the HTTP web response:
-                            using (Stream stream = response.GetResponseStream())
+                            var values = new Dictionary<string, string>
                             {
-                                using (StreamReader reader = new StreamReader(stream))
-                                {
-                                    string content = reader.ReadToEnd();
-                                    
-                                }
+                                { "action", "uploadCar" },
+                                { "marca", brand.Text },
+                                { "modello", model.Text },
+                                { "vecchio", status.Text },
+                                { "motori", engines.Text },
+                                {"serieNuova", year.Text },
+                                {"serieVecchia", "" },
+                                {"immagine", image.Text },
+                                {"dimensioni", dimensions.Text },
+                                {"modelli", types.Text },
+                                {"prezzo", price.Text },
+                                {"descrizione", description.Text }
+
+                            };
+
+                            var content = new FormUrlEncodedContent(values);
+                            var response = await client.PostAsync("http://www.stritwalk.com/Park/api/", content);
+                            var responseString = await response.Content.ReadAsStringAsync();
+                            if (response.IsSuccessStatusCode)
+                            {
+                                await Navigation.PopAsync();
                             }
                         }
-                        */
                     }
                     catch (Exception ex)
                     {
