@@ -5,6 +5,8 @@ namespace ParkX3
 {
     public class Car
     {
+        public string action { get; set; }
+        public string marca { get; set; }
         public string modello { get; set; }
         public string vecchio { get; set; }
         public string breveDesc { get; set; }

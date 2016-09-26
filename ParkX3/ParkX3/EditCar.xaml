@@ -32,9 +32,13 @@
         <Label Text="Description"></Label>
         <Entry Placeholder="" x:Name="description"/>
         
-        <Button Text="Save"  />
-        <Button Text="Cancel" />
-        <Button Text="DELETE CAR" TextColor="Red"/>
+        <Button Text="Save" Clicked="save" />
+        <Button Text="Cancel" Clicked="cancel"/>
+        
+        <Label Text="Enter password to delete" x:Name="passL" ></Label>
+        <Entry Placeholder="" x:Name="pass" IsPassword="True"/>
+        <Button Text="DELETE CAR" Clicked="delete" TextColor="Red"/>
+        
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>
