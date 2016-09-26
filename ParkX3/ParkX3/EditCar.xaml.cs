@@ -155,7 +155,7 @@ namespace ParkX3
                     {
                         await DisplayAlert("Alert", ex.ToString(), "OK");
                     }
-                    await Navigation.PopAsync();
+                   
                 }
 
             }

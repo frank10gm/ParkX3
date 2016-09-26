@@ -27,6 +27,8 @@ namespace ParkX3
 		protected async override void OnAppearing()
 		{
 			base.OnAppearing();
+            grouped = null;
+            jsonParsed = null;
 			await LoadCars();
 		}
 

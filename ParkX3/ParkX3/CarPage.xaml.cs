@@ -16,7 +16,7 @@ namespace ParkX3
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            //loadLayout(marca_s);
+            loadLayout(marca_s);
         }
 
         public CarPage(Car selection, string marca)
@@ -24,12 +24,13 @@ namespace ParkX3
             InitializeComponent();
             select = selection;
             marca_s = marca;
-            loadLayout(marca_s);
+            //loadLayout(marca_s);
         }
 
         void loadLayout(string marca)
         {
-            this.Title = select.modello;
+            lay.Children.Clear();
+            Title = select.modello;
             marca_g = marca;
             modello_g = select.modello;
             selezione = select;
@@ -38,6 +39,33 @@ namespace ParkX3
                 breveDesc.Text = "Year: " + select.serieNuova;
 
             FormattedString fs = new FormattedString();
+            fs.Spans.Add(new Span
+            {
+                Text = marca + " " + select.modello,
+                FontSize = 16
+            });
+            fs.Spans.Add(new Span
+            {
+                Text = Environment.NewLine + Environment.NewLine,
+                FontSize = 6
+            });
+            if (select.serieNuova != "")
+                fs.Spans.Add(new Span
+                {
+                    Text = "Year: " + select.serieNuova,
+                    FontSize = 14
+                });
+            Frame top = new Frame
+            {
+                Content = new Label
+                {
+                    FormattedText = fs
+                },
+                HasShadow = true,
+                Margin = new Thickness(20, 12, 20, 3)
+            };
+
+            fs = new FormattedString();
             fs.Spans.Add(new Span
             {
                 Text = "Year",
@@ -193,6 +221,7 @@ namespace ParkX3
                 Margin = new Thickness(20, 3, 20, 3)
             };
 
+            lay.Children.Add(top);
             if (select.motori != "")
                 lay.Children.Add(engines);
             if (select.modelli != "")
@@ -201,6 +230,8 @@ namespace ParkX3
                 lay.Children.Add(dimensions);
             if (select.prezzo != "")
                 lay.Children.Add(price);
+            if (select.descrizione != "")
+                lay.Children.Add(description);
 
             try
             {
@@ -236,13 +267,14 @@ namespace ParkX3
 
         async void editCar(object sender, EventArgs e)
         {
-            EditCar edit = new EditCar(marca_g, modello_g, selezione.vecchio, selezione.motori, selezione.serieNuova, "", selezione.immagine, selezione.dimensioni, selezione.modelli, selezione.prezzo, selezione.descrizione, selezione.id );
+            EditCar edit = new EditCar(marca_g, modello_g, selezione.vecchio, selezione.motori, selezione.serieNuova, "", selezione.immagine, selezione.dimensioni, selezione.modelli, selezione.prezzo, selezione.descrizione, selezione.id);
             edit.EditSuccess += async (sender2, eventArgs) =>
             {
                 if (eventArgs.Args[0].ToString() == "del")
                 {
                     await Navigation.PopAsync();
-                }else
+                }
+                else
                 {
                     select.vecchio = eventArgs.Args[0].ToString();
                     select.motori = eventArgs.Args[1].ToString();
