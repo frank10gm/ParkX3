@@ -96,8 +96,8 @@ namespace ParkX3
 			}
 
 			if (saleGroup.Count > 0) grouped.Add(saleGroup);
-			if (heritageGroup.Count > 0) grouped.Add(heritageGroup);
 			if (prototypeGroup.Count > 0) grouped.Add(prototypeGroup);
+			if (heritageGroup.Count > 0) grouped.Add(heritageGroup);			
 
 			CarsView.ItemsSource = grouped;
 		}
