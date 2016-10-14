@@ -59,7 +59,7 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Distribution: Saverino La Placa (DY9R6X78A3)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
@@ -93,25 +93,11 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <ITunesArtwork Include="iTunesArtwork" />
-    <ITunesArtwork Include="iTunesArtwork@2x" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Default-568h%402x.png" />
-    <BundleResource Include="Resources\Default-Portrait.png" />
-    <BundleResource Include="Resources\Default-Portrait%402x.png" />
-    <BundleResource Include="Resources\Default.png" />
-    <BundleResource Include="Resources\Default%402x.png" />
-    <BundleResource Include="Resources\Icon-60%402x.png" />
     <BundleResource Include="Resources\Icon-60%403x.png" />
-    <BundleResource Include="Resources\Icon-76.png" />
-    <BundleResource Include="Resources\Icon-76%402x.png" />
-    <BundleResource Include="Resources\Icon-Small-40.png" />
-    <BundleResource Include="Resources\Icon-Small-40%402x.png" />
     <BundleResource Include="Resources\Icon-Small-40%403x.png" />
-    <BundleResource Include="Resources\Icon-Small.png" />
-    <BundleResource Include="Resources\Icon-Small%402x.png" />
     <BundleResource Include="Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <BundleResource Include="Resources\icon-pork.png" />
@@ -144,6 +130,40 @@
       <Project>{192F2A1D-4EF9-424D-AEC5-3834188753DE}</Project>
       <Name>ParkX3</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-small.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-small%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-small%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-40%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-60%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-50.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-50%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-72.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-72%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-76%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-83.5%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-736h.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default~iphone.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default%402x~iphone.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-568h%402x~iphone.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-667h.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Landscape-736h.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Portrait~ipad.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Portrait%402x~ipad.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Landscape~ipad.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Landscape%402x~ipad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork%402x" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
