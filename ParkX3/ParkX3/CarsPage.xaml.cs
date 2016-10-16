@@ -27,8 +27,8 @@ namespace ParkX3
 		protected async override void OnAppearing()
 		{
 			base.OnAppearing();
-            grouped = null;
-            jsonParsed = null;
+			grouped = null;
+			//jsonParsed = null;
 			await LoadCars();
 		}
 
@@ -59,8 +59,8 @@ namespace ParkX3
 			var select = (Car)e.SelectedItem;
 
 			await Navigation.PushAsync(new CarPage(select, marca.marca));
-            searchBar.Text = "";
-        }
+			searchBar.Text = "";
+		}
 
 		public async Task LoadCars()
 		{
@@ -97,7 +97,7 @@ namespace ParkX3
 
 			if (saleGroup.Count > 0) grouped.Add(saleGroup);
 			if (prototypeGroup.Count > 0) grouped.Add(prototypeGroup);
-			if (heritageGroup.Count > 0) grouped.Add(heritageGroup);			
+			if (heritageGroup.Count > 0) grouped.Add(heritageGroup);
 
 			CarsView.ItemsSource = grouped;
 		}
@@ -134,10 +134,10 @@ namespace ParkX3
 			}
 		}
 
-        async void addCar(object sender, EventArgs e)
-        {            
-            AddCar add = new AddCar(marca.marca, "");
-            await Navigation.PushAsync(add);
-        }
-    }
+		async void addCar(object sender, EventArgs e)
+		{
+			AddCar add = new AddCar(marca.marca, "");
+			await Navigation.PushAsync(add);
+		}
+	}
 }

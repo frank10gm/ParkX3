@@ -29,10 +29,12 @@
 	<key>CFBundleName</key>
 	<string>Park</string>
 	<key>CFBundleVersion</key>
-	<string>3.0.1</string>
+	<string>3.1.6</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImage.launchimage</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>CFBundleShortVersionString</key>
+	<string>3.1.6</string>
 </dict>
 </plist>
